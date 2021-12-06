@@ -11,7 +11,7 @@
 
 # Check if component created without retry
 - name: Check {{ component_type }} {{ component_name }} is created
-  debugger: on_failed
+  debugger: on_skipped
   k8s_info:
     kind: "{{ component_type }}"
     name: "{{ component_name }}"
