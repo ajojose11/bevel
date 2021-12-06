@@ -38,6 +38,7 @@
 # This task will try for a maximum number of iterations defined in env.retry_count of network.yaml with an interval of
 # 35 seconds between each try
 - name: Check {{ component_type }} {{ component_name }} is created
+  debugger: on_failed
   k8s_info:
     kind: "{{ component_type }}"
     name: "{{ component_name }}"
@@ -51,6 +52,7 @@
 # This task will try for a maximum number of iterations defined in env.retry_count of network.yaml with an interval of
 # 35 seconds between each try
 - name: Wait for {{ component_type }} {{ component_name }}
+  debugger: on_failed
   k8s_info:
     kind: "{{ component_type }}"
     name: "{{ component_name }}"
